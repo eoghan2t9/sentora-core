@@ -194,9 +194,9 @@ function ReloadBindHook()
     if (sys_versions::ShowOSPlatformVersion() == "Windows") {
         $reload_bind = ctrl_options::GetSystemOption('bind_dir') . "rndc.exe reload";
     } else {
-        $reload_bind = ctrl_options::GetSystemOption('zsudo') . " service " . ctrl_options::GetSystemOption('bind_service') . " reload";
+        $reload_bind = ctrl_options::GetSystemOption('zsudo') . " service pdns reload";
     }
-    echo "Reloading BIND now..." . fs_filehandler::NewLine();
+    echo "Reloading PowerDNS now..." . fs_filehandler::NewLine();
     pclose(popen($reload_bind, 'r'));
 }
 ?>
